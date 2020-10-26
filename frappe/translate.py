@@ -315,6 +315,8 @@ def get_messages_for_app(app, deduplicate=True):
 	messages.extend(get_server_messages(app))
 	if deduplicate:
 		messages = deduplicate_messages(messages)
+	# Gets the first two elements
+	messages = [x[0:2] for x in messages]
 	return messages
 
 def get_messages_from_doctype(name):
